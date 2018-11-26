@@ -1,18 +1,5 @@
 import numpy as np
 
-have_PIL = True
-try:
-    import PIL.Image
-except ImportError:
-    have_PIL = False
-
-have_numpy = True
-try:
-    import numpy as np
-except ImportError:
-    have_numpy = False
-
-
 def get_LUT_value(data, window, level):
     """Apply the RGB Look-Up Table for the given
        data and window/level value."""
