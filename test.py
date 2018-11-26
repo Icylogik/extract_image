@@ -9,3 +9,4 @@ dicom_data = pdc.dcmread(dicom_file)
 image, slice_location = extract(dicom_data)
 
 plt.imshow(image,cmap=plt.cm.bone)
+plt.show(block=True)
