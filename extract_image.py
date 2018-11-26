@@ -58,11 +58,10 @@ def linear_transform(dicom_data):
 def extract(dicom_data):
     """Extract viewable image and the slice location 
        from the given dicom data."""
-    image_data = pdc.dcmread(dicom_data)
-    pic = linear_transform(image_data)
-    im_transformed = get_LUT_value(pic, image_data.WindowWidth,
-                                image_data.WindowCenter)
-    slice_loc = dataset.SliceLocation
+    pic = linear_transform(dicom_data)
+    im_transformed = get_LUT_value(pic, dicom_data.WindowWidth,
+                                dicom_data.WindowCenter)
+    slice_loc = dicom_data.SliceLocation
     
     return im_transformed, slice_loc
                                 
